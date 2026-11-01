@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -48,4 +51,117 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  display: flex;
+  flex-direction: row; /* Выстраивает элементы в строку (обычно работает по умолчанию) */
+  align-items: flex-end;
+  width: 1140px;
+  height: 534px;
+  gap: 30px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+
+.content__list {
+  display: flex;       /* Делаем список flex-контейнером */
+  flex-direction: column; /* Располагаем элементы вертикально (как в обычном списке) */
+  gap: 30px; 
+}
+
+.content__list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  height: 298px;
+  overflow: auto;
+  
+}
+
+.content__details {
+  flex-grow: 1; 
+  height: 100%;
+}
+
+.result__video-container {
+  width: 711px;
+  height: 386px;
+  margin: 16px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  height: 103px; /* Точная высота из макета */
+  min-width: 194px; /* Защита картинки от сплющивания */
+  object-fit: cover; /* Заполняет заданные рамки без искажения пропорций */
+  object-position: center; /* Центрирует кадр при обрезке */
+}
+
+.content__video-card-description-container {
+  flex-grow: 1; /* Забирает всё свободное место слева от картинки */
+  min-width: 0;
+  
+}
+
+.title {
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+  font-family: 'Oswald';
+  
+}
+
+.content__accent{
+  color: #545050;
+}
+
+.search-form__fieldset-title {
+  font-size: inherit;
+  font-weight: 400;
+  
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+
+}
+
+.content__video-card-title {
+  font-family: 'Oswald';
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap; /* Запрещает тексту переноситься на новую строку */
+  overflow: hidden; /* Скрывает всё, что выходит за границы контейнера */
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  line-height: 16px;
+  /* ... остальные шрифтовые стили из макета ... */
+
+
+  overflow: hidden; /* Скрывает хвост текста, который не попал в заданные строки */
 }
