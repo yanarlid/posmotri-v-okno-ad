@@ -19,6 +19,7 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  font-weight: 400;
 }
 
 h1,
@@ -81,7 +82,7 @@ ol {
 .content__list-container {
   display: flex;
   flex-direction: column;
-  gap: 29px;
+  gap: 30px;
   height: 298px;
   overflow-y: auto;    /* вместо overflow: auto */
   overflow-x: hidden;
@@ -164,7 +165,8 @@ ol {
 }
 
 .content__video-card-description {
-  line-height: 16px;
+  line-height: 16.2px;
+  
   /* ... остальные шрифтовые стили из макета ... */
 
   display: -webkit-box; /* Включает специальный режим отображения блочной коробки */
@@ -172,4 +174,138 @@ ol {
   -webkit-line-clamp: 4;
   line-clamp: 4; 
   overflow: hidden; /* Скрывает хвост текста, который не попал в заданные строки */
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap:15px;
+}
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  gap: 5px;
+
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+  padding: 0px 1px;
+}
+
+.search-form__textfield {
+  color: #fff;
+  background-color: #1B1919;
+  appearance: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  width: 225px;
+  font-family: inherit; /* Забирает шрифт у родителя */
+  font-size: inherit; /* Забирает размер у родителя */
+  font-weight: inherit;
+  
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: 1px solid #ffffff; /* Цвет и толщина рамки из макета */
+  outline-offset: 1px; /* Опциональный отступ, чтобы рамка не прилипала вплотную к контенту */
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px #FFFFFF solid;
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff; /* Задайте цвет и толщину из вашего макета */
+  
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  font-family: inherit; /* Забирает шрифт у родителя */
+  font-size: inherit; /* Забирает размер у родителя */
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #ffffff; /* Цвет и толщина рамки из макета */
+  outline-offset: 1px;
+}
+
+
+.search-form__submit-button {
+  align-self: flex-end;
+  width: 194px;
+  height: 34px;
+}
+
+.more-button {
+  width: 100%;
+  height: 34px;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+
+.content__card-link {
+  display: block;
 }
