@@ -20,6 +20,7 @@ html {
   background-color: #1b1919;
   inline-size: 1200px;
   block-size: 100%;
+  line-height: 1;
 }
 
 h1,
@@ -95,7 +96,7 @@ ol {
   position: relative;
   width: 711px;
   height: 386px;
-  margin: 16px;
+  margin-bottom: 16px;
 }
 
 .result__video {
@@ -126,7 +127,7 @@ ol {
 
 .title {
   margin-bottom: 26px;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -145,16 +146,41 @@ ol {
 .content__card-link {
   color: #fff;
   text-decoration: none;
+  display: block;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-skip-ink: none;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: -1px;
 }
 
 .content__video-card-title { 
   overflow: hidden;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase; 
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -294,29 +320,3 @@ ol {
   margin-bottom: 2px;
 }
 
-.content__card-link {
-  display: block;
-}
-
-.content__card-link_current {
-  background-color: #545050;
-}
-
-.content__card-link:active {
-  background-color: #545050;
-}
-
-.content__card-link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-decoration-skip-ink: none;
-}
-
-.content__card-link:focus {
-  outline: none;
-}
-
-.content__card-link:focus-visible {
-  outline: 1px solid #ffffff;
-  outline-offset: -1px;
-}
